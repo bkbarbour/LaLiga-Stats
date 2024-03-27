@@ -65,4 +65,8 @@ public class PlayerService {
         System.out.println("Response from API: " + response);
     }
 
+    public List<Player> getPlayersList(String jsonResponse){
+        return parseApiResponse(jsonResponse);
+    }
+
 }
