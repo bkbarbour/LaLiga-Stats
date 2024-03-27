@@ -21,9 +21,9 @@ public class LaLigaStatsApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        playerService.testFetchScorers();
-        //System.out.println(playerService.parseApiResponse(playerService.fetchScorers()));
-        String resultAsString = playerService.parseApiResponse(playerService.fetchScorers()).toString();
-        System.out.println(resultAsString);
+//        playerService.testFetchScorers();
+//        //System.out.println(playerService.parseApiResponse(playerService.fetchScorers()));
+//        String resultAsString = playerService.parseApiResponse(playerService.fetchScorers()).toString();
+//        System.out.println(resultAsString);
     }
 }

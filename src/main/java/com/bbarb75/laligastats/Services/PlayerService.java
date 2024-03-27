@@ -60,10 +60,10 @@ public class PlayerService {
         return apiClient.fetchDataFromApi(apiUrl);
     }
 
-    public void testFetchScorers(){
+    /*public void testFetchScorers(){
         String response = fetchScorers();
         System.out.println("Response from API: " + response);
-    }
+    }*/
 
     public List<Player> getPlayersList(String jsonResponse){
         return parseApiResponse(jsonResponse);
