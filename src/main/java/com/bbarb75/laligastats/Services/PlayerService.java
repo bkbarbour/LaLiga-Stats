@@ -55,8 +55,23 @@ public class PlayerService {
     }
 
 
-    public String fetchScorers(){
+    public String fetchLaLigaScorers(){
         String apiUrl = "https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=140&season=2023";
+        return apiClient.fetchDataFromApi(apiUrl);
+    }
+
+    public String fetchPremScorers(){
+        String apiUrl = "https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=39&season=2023";
+        return apiClient.fetchDataFromApi(apiUrl);
+    }
+
+    public String fetchLigue1Scorers(){
+        String apiUrl = "https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=61&season=2023";
+        return apiClient.fetchDataFromApi(apiUrl);
+    }
+
+    public String fetchBundesligaScorers(){
+        String apiUrl = "https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=78&season=2023";
         return apiClient.fetchDataFromApi(apiUrl);
     }
 

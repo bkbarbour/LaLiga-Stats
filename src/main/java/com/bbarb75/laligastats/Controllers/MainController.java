@@ -20,7 +20,7 @@ public class MainController {
 
     @GetMapping("/home")
     public String getTopScorers(Model model){
-        String jsonResponse = playerService.fetchScorers();
+        String jsonResponse = playerService.fetchLaLigaScorers();
         List<Player> players = playerService.parseApiResponse(jsonResponse);
         model.addAttribute("players", players);
         return "home";
