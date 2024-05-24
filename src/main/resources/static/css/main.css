@@ -4,6 +4,10 @@ h1{
 
 }
 
+h2{
+    font-family: sans-serif;
+
+}
 strong{
     font-weight: 700;
     background-color: yellow;
@@ -11,5 +15,9 @@ strong{
 
 p{
     font-family: sans-serif;
+}
+
+table, th, td{
+    border: 1px solid;
 }
 

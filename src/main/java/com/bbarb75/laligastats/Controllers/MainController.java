@@ -5,6 +5,7 @@ import com.bbarb75.laligastats.Services.PlayerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +20,26 @@ public class MainController {
     }
 
     @GetMapping("/home")
-    public String getTopScorers(Model model){
-        String jsonResponse = playerService.fetchLaLigaScorers();
+    public String getTopScorers(@RequestParam(value = "leagues", defaultValue= "La Liga")String leagues, Model model){
+        String jsonResponse;
+
+        switch(leagues){
+            case "Premier League":
+                jsonResponse = playerService.fetchPremScorers();
+                break;
+            case "Ligue 1":
+                jsonResponse = playerService.fetchLigue1Scorers();
+                break;
+            case "Bundesliga":
+                jsonResponse = playerService.fetchBundesligaScorers();
+                break;
+            case "La Liga":
+            default:
+                jsonResponse = playerService.fetchLaLigaScorers();
+                break;
+
+        }
+        //String jsonResponse = playerService.fetchLaLigaScorers();
         List<Player> players = playerService.parseApiResponse(jsonResponse);
         model.addAttribute("players", players);
         return "home";
