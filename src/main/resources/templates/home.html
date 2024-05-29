@@ -7,6 +7,8 @@
     <link th:href="@{/css/main.css}" rel="stylesheet" />
     <script>
         function onLeagueChange(){
+            var selectedLeague = document.getElementById('leagues').value;
+            document.getElementById('top-scorer-headline').textContent = "Top Scorers in " + selectedLeague;
             document.getElementById('leagueForm').submit();
         }
     </script>
@@ -19,13 +21,14 @@
     <label class="choose-league" for="leagues">Choose a league:</label>
 <form class ="leagueForm" id="leagueForm" action="/home" method="get">
     <select name="leagues" id="leagues" onchange="onLeagueChange()">
-        <option value = "La Liga">La Liga</option>
-        <option value = "Premier League">Premier League</option>
-        <option value = "Ligue 1">Ligue 1</option>
-        <option value = "Bundesliga">Bundesliga</option>
+        <option hidden disabled th:selected="${leagues == 'select'}" value = "select">-- Select a league --</option>
+        <option th:selected ="${leagues == 'La Liga'}" value = "La Liga">La Liga</option>
+        <option th:selected ="${leagues == 'Premier League'}" value = "Premier League">Premier League</option>
+        <option th:selected ="${leagues == 'Ligue 1'}" value = "Ligue 1">Ligue 1</option>
+        <option th:selected ="${leagues == 'Bundesliga'}" value = "Bundesliga">Bundesliga</option>
     </select>
 </form>
-    <h2 class="top-scorer">Top Scorers</h2>
+    <h2 class="top-scorer" id="top-scorer-headline" th:text="${leagues == 'select'} ? 'Top Scorers' : 'Top Scorers in ' + ${leagues}"></h2>
     <br><br>
     <div class="table-container">
     <table class="table table-bordered table-striped">
