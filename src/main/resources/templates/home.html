@@ -13,11 +13,11 @@
 </head>
 
 <body>
-<div class="container">
-    <h1>Top 4 Leagues - Top Scorers</h1>
+
+    <h1 class="page-header">Top 4 Leagues - Top Scorers</h1>
     <hr>
-    <label for="leagues">Choose a league:</label>
-<form id="leagueForm" action="/home" method="get">
+    <label class="choose-league" for="leagues">Choose a league:</label>
+<form class ="leagueForm" id="leagueForm" action="/home" method="get">
     <select name="leagues" id="leagues" onchange="onLeagueChange()">
         <option value = "La Liga">La Liga</option>
         <option value = "Premier League">Premier League</option>
@@ -25,8 +25,9 @@
         <option value = "Bundesliga">Bundesliga</option>
     </select>
 </form>
-    <h2>Top Scorers</h2>
+    <h2 class="top-scorer">Top Scorers</h2>
     <br><br>
+    <div class="table-container">
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
@@ -46,6 +47,6 @@
         </tr>
         </tbody>
     </table>
-</div>
+    </div>
 </body>
 </html>

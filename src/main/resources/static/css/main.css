@@ -4,10 +4,24 @@ h1{
 
 }
 
+/*h1.page-header{
+    text-align: center;
+}*/
+
 h2{
     font-family: sans-serif;
 
 }
+
+/*h2.top-scorer{
+    text-align: center;
+}*/
+/*label.choose-league{
+    text-align: center;
+}
+form.leagueForm{
+    text-align: center;
+}*/
 strong{
     font-weight: 700;
     background-color: yellow;
@@ -19,5 +33,21 @@ p{
 
 table, th, td{
     border: 1px solid;
+
+}
+
+/*.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.table{
+    width: auto;
+    margin: auto;
+}*/
+tr:nth-child(even){
+    background-color: #f2f2f2;
 }
 

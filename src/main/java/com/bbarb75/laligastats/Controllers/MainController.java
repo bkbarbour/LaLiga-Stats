@@ -34,6 +34,7 @@ public class MainController {
                 jsonResponse = playerService.fetchBundesligaScorers();
                 break;
             case "La Liga":
+                jsonResponse = playerService.fetchLaLigaScorers(); //this should fix the page not navigating to the La Liga stats correctly after leaving it once
             default:
                 jsonResponse = playerService.fetchLaLigaScorers();
                 break;
